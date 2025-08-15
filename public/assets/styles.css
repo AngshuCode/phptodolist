@@ -1,0 +1,45 @@
+*{box-sizing:border-box}html,body{height:100%}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;background:#0f1220;color:#e6eaf2}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:linear-gradient(135deg,#1d2342,#151a33);border-bottom:1px solid #2a3156;position:sticky;top:0}
+h1{margin:0;font-size:20px}
+.quick-actions{display:flex;gap:8px;align-items:center}
+.quick-actions button, .composer button{background:#2e6bff;border:0;color:white;padding:8px 12px;border-radius:8px;cursor:pointer}
+.quick-actions input, .composer input, select{background:#0c1022;border:1px solid #2a3156;color:#e6eaf2;padding:8px 10px;border-radius:8px}
+main{padding:20px;max-width:1000px;margin:0 auto}
+.composer{display:grid;grid-template-columns:1fr 0.6fr 0.3fr auto;gap:10px;margin-bottom:16px}
+.board{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.list{background:#0c1022;border:1px solid #2a3156;border-radius:12px;padding:12px;min-height:200px}
+.list h2{margin:0 0 8px 0;font-size:16px;color:#b3c1ff}
+.todo{display:grid;grid-template-columns:24px 1fr auto;gap:10px;align-items:center;padding:10px;border:1px solid #21274a;border-radius:10px;margin:8px 0;background:#0f1430}
+.todo.done .title{text-decoration:line-through;color:#8a93b2}
+.tags{font-size:12px;color:#9aa3c9}
+.meta{font-size:12px;color:#b4bad4}
+.actions{display:flex;gap:6px}
+.actions button{background:#1b2140;border:1px solid #333a66;color:#dfe7ff;padding:4px 8px;border-radius:8px}
+footer{padding:16px;color:#8a93b2;text-align:center}
+.hidden{display:none}
+.focus main{max-width:700px}
+
+/* Mobile responsiveness */
+@media (max-width: 900px){
+	header{flex-direction:column;align-items:stretch;gap:10px}
+	h1{font-size:18px}
+	.quick-actions{flex-wrap:wrap}
+	.quick-actions .search, .quick-actions select{flex:1 1 200px}
+	main{padding:14px;max-width:720px}
+	.composer{grid-template-columns:1fr;gap:8px}
+	.composer input, .composer button, .quick-actions input, .quick-actions select{width:100%}
+	.board{grid-template-columns:1fr}
+	.list{min-height:auto}
+	.todo{grid-template-columns:24px 1fr}
+	.actions{grid-column:1 / -1;justify-content:flex-end}
+	.actions button{padding:6px 10px}
+}
+
+@media (max-width: 520px){
+	header{padding:12px}
+	h1{font-size:16px}
+	main{padding:10px}
+	.todo{gap:8px;padding:8px}
+	.quick-actions button, .composer button{padding:8px 10px}
+	.quick-actions input, .composer input, select{padding:8px}
+}

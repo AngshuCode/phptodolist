@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Next-level Todo</title>
+  <link rel="icon" href="/assets/favicon.ico">
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Next‑level Productivity Todos</h1>
+      <div class="quick-actions">
+        <button id="addQuick">+ Quick Add</button>
+        <button id="focusMode">Focus Mode</button>
+        <button id="exportBtn">Export</button>
+        <label class="search">
+          <input id="search" placeholder="Search or type / to focus" />
+        </label>
+        <select id="statusFilter">
+          <option value="">All</option>
+          <option value="open">Open</option>
+          <option value="done">Done</option>
+          <option value="archived">Archived</option>
+        </select>
+      </div>
+    </header>
+
+    <main>
+      <section class="composer">
+        <input id="title" placeholder="What needs to be done?" />
+        <input id="tags" placeholder="#tags (comma separated)" />
+        <input id="due" type="date" />
+        <button id="create">Add</button>
+      </section>
+
+      <section class="board">
+        <div class="list" data-status="open">
+          <h2>Open</h2>
+          <ul id="list-open"></ul>
+        </div>
+        <div class="list" data-status="done">
+          <h2>Done</h2>
+          <ul id="list-done"></ul>
+        </div>
+        <div class="list" data-status="archived">
+          <h2>Archived</h2>
+          <ul id="list-archived"></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>Keyboard: n new • / search • x toggle done • del delete • e edit</small>
+    </footer>
+  </div>
+
+  <script src="/assets/app.js" type="module"></script>
+</body>
+</html>
