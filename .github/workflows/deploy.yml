@@ -1,0 +1,32 @@
+name: Build and Deploy PHP to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # change if your main branch is different
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout code
+      - uses: actions/checkout@v3
+
+      # Install PHP
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      # Run PHP to generate HTML
+      - name: Generate HTML from PHP
+        run: |
+          mkdir output
+          php index.php > output/index.html
+
+      # Deploy to GitHub Pages
+      - name: Deploy to Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
